@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Dashboard de Reportes</title>
+</head>
+<body>
+  <h1>Iniciar sesión</h1>
+  <form id="loginForm">
+    <label for="username">Usuario:</label>
+    <input type="text" id="username" name="username" required>
+    <br>
+    <label for="password">Contraseña:</label>
+    <input type="password" id="password" name="password" required>
+    <br>
+    <button type="submit">Iniciar sesión</button>
+  </form>
+
+  <script>
+    // Simulamos credenciales (esto debería manejarse de manera segura en un servidor)
+    const validCredentials = { username: "hacker", password: "seguro123" };
+
+    // Manejar el formulario de login
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      // Verificamos las credenciales
+      if (username === validCredentials.username && password === validCredentials.password) {
+        // Redirigir al dashboard si las credenciales son correctas
+        window.location.href = 'dashboard.html';  // Cambia el nombre si es diferente
+      } else {
+        alert('Credenciales incorrectas');
+      }
+    });
+  </script>
+</body>
+</html>
+
